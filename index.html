@@ -12,7 +12,12 @@
 </head>
 <body>
     <div id="app">
-        
+        <ul v-if="emails.length === emailNum">
+            <li v-for="(item, index) in this.emails">{{item}}</li>
+        </ul>
+        <button class="btn btn-outline-dark" @click="getEmailList">
+           Nuova lista
+        </button>
     </div>
     
 </body>
