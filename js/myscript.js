@@ -11,12 +11,13 @@ createApp({
     methods:{
         getEmailList(){
             const newList = [];
-            for(let i = 0; i < emailNum; i++){
-                axios.get(`${this.apiPath}random/mail`).then((res)=>{
+            for(let i = 1; i <= this.emailNum; i++){
+                axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((res)=>{
                     const mail = res.data.response;
                     newList.push(mail);
-                    
-                    this.emails = [...newList];
+                    if(i === this.emailNum){
+                        this.emails = [...newList];
+                    }
                 });
             }
         }
@@ -25,4 +26,4 @@ createApp({
     created(){
         this.getEmailList();
     }
-}).mount('app')
+}).mount('#app')

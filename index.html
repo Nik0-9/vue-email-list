@@ -7,17 +7,19 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <link rel="stylesheet" href="js/myscript.js">
+    <script src="js/myscript.js" type="module"></script>
+    
     <title>Vue Email list</title>
 </head>
 <body>
     <div id="app">
-        <ul v-if="emails.length === emailNum">
-            <li v-for="(item, index) in this.emails">{{item}}</li>
-        </ul>
         <button class="btn btn-outline-dark" @click="getEmailList">
-           Nuova lista
-        </button>
+            Nuova lista
+         </button>
+        <ol>
+            <li v-for="(item, index) in emails">{{item}}</li>
+        </ol>
+        
     </div>
     
 </body>
